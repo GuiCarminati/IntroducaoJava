@@ -5,6 +5,7 @@
  */
 package visao;
 
+import armazenamento.MeioArmazenamento;
 import java.text.ParseException;
 import java.util.Scanner;
 
@@ -13,12 +14,14 @@ import java.util.Scanner;
  * @author 5967325
  */
 public class Menu {
-    public static void exibirMenu() throws ParseException{
-        System.out.println(" -=-=-=-= Menu Principal =-=-=-=- ");
-        System.out.println(" Seleciona a opção: ");
+    public static void exibirMenu(){
+        System.out.println(" ======= Menu Principal ======= ");
+        System.out.println(" Número de equipamentos: " + MeioArmazenamento.MEIO_ARMAZENAMENTO_EQUIPAMENTOS.size());
+        
+        System.out.println(" Selecione a opção: ");
         System.out.println(" 1. Cadastro equipamento ");
         System.out.println(" 2. Listagem equipamento ");
-        System.out.print(" O que você deseja fazer ");
+        System.out.print(" O que você deseja fazer? ");
         
         Scanner entrada = new Scanner(System.in);
         int opcao;
@@ -33,6 +36,8 @@ public class Menu {
         }while(true);
         if(opcao == 1) {
             EquipamentoVisao.exibirFormularioEquipamento();
+        } else if (opcao == 2) {
+            EquipamentoVisao.exibirListagemEquipamento();
         }
     }
 }

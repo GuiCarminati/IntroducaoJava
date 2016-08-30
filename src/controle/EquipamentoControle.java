@@ -5,6 +5,8 @@
  */
 package controle;
 
+import armazenamento.MeioArmazenamento;
+import java.util.ArrayList;
 import java.util.Date;
 import modelo.Equipamento;
 
@@ -21,5 +23,14 @@ public class EquipamentoControle {
        objetoEquipamento.setDataTerminoGarantia(dataTerminoGarantia);
        objetoEquipamento.setValor(valor);
        objetoEquipamento.salvar();
+    }
+    
+    public static Equipamento obterEquipamentoPeloNumeroDoPatrimonio(String numeroPatrimonio){
+        return Equipamento.obterPeloNumero(numeroPatrimonio);
+    }
+    
+    public static ArrayList<Equipamento> obterListaEquipamentos(){
+        //return MeioArmazenamento.MEIO_ARMAZENAMENTO_EQUIPAMENTOS;
+        return Equipamento.obterLista();
     }
 }
